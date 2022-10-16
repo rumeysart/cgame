@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ * ---
+ * Hint: You can use the debug stream to print initialTX and initialTY, if Thor seems not follow your orders.
+ **/
+
+int main()
+{
+    int lightx; // the X position of the light of power
+    int lighty; // the Y position of the light of power
+    int tx; // Thor's starting X position
+    int ty; // Thor's starting Y position
+    cin >> lightx >> lighty >> tx >> ty; cin.ignore();
+    char konum;
+
+    // game loop
+    while (1) {
+        int remaining_turns; // The remaining amount of turns Thor can move. Do not remove this line.
+        cin >> remaining_turns; cin.ignore();
+        
+        string kn = "";
+        if(lighty < ty)
+        {
+            kn +=  "N";
+            ty--;
+        } 
+
+        else if(lighty > ty)
+        {
+           kn += "S";
+            ty++;
+         }
+        
+        if(lightx < tx)
+        {
+            kn += "W";
+            tx--;
+        }
+        else if(lightx > tx)
+        {
+            kn += "E";
+            tx++;
+        }
+       
+
+        cout << kn << endl;
+    }
+}
